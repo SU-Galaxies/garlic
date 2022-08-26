@@ -4,7 +4,16 @@ from ftplib import FTP_TLS
 import getpass
 
 
-def download_from_mast(user, stage, suffix):
+def download_from_mast(user, stage, suffix=None):
+    """ Downloads files with specified suffix from a mast staging area
+    user : string
+        the username
+    stage : string
+        the staging name from mast. They tend to be of the
+        format "user/user12345"
+    suffix : string, (optional)
+        the file ending of the files to download (for instance .fits)
+    """
     print("Connecting to MAST as user: " + user)
     password = getpass.getpass()
     ftps = FTP_TLS("archive.stsci.edu")
