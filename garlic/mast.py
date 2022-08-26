@@ -4,11 +4,11 @@ from ftplib import FTP_TLS
 import getpass
 
 
-def mastftp(user, stage, suffix):
+def download_from_mast(user, stage, suffix):
     print("Connecting to MAST as user: " + user)
-    passw = getpass.getpass()
+    password = getpass.getpass()
     ftps = FTP_TLS("archive.stsci.edu")
-    ftps.login(user=user, passwd=passw)
+    ftps.login(user=user, passwd=password)
     ftps.prot_p()
     ftps.cwd("stage/" + stage)
 
@@ -35,4 +35,4 @@ if __name__ == "__main__":
     parser.add_argument("stage")
     parser.add_argument("--suffix", default=None)
     args = parser.parse_args()
-    maastftp(args.user, args.stage, args.suffix)
+    download_from_mast(args.user, args.stage, args.suffix)
