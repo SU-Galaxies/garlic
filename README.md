@@ -11,7 +11,7 @@ This installation method allows you to change and update the files to suit your 
 
 1. Clone the repository
 ```
-$ git clone https://github.com/runnholm/garlic.git
+$ git clone https://github.com/SU-Galaxies/garlic.git
 ```
 
 2. Install the package
